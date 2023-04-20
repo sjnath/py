@@ -1,0 +1,12 @@
+deci = int(input('Enter a decimal integer: '))
+hexadecimal = ""
+
+while deci > 0:
+    rem = deci % 16
+    if rem < 10:
+        hexadecimal = str(rem) + hexadecimal
+    else:
+        hexadecimal = chr(rem + 55) + hexadecimal
+    deci //= 16
+
+print("The hexadecimal representation is:", hexadecimal)
