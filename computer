@@ -1,0 +1,33 @@
+import random
+
+# Define the possible responses from the computer
+responses = {
+    "hello": ["Hello, how can I assist you?", "Hi there!", "Hey! What's up?"],
+    "goodbye": ["Goodbye!", "See you later.", "Bye for now!"],
+    "help": ["How can I help you?", "What do you need help with?", "I'm here to assist you."],
+    "name": ["My name is Computer.", "I'm just a computer program.", "I don't have a name, but you can call me whatever you like."],
+    "weather": ["Sorry, I'm not able to provide weather information.", "You can check the weather on your phone or computer.", "I'm not a weather expert, but I can look it up for you."],
+    "default": ["I'm sorry, I didn't understand what you said.", "Could you please repeat that?", "I'm not sure what you mean."]
+}
+
+# Define a function to simulate the conversation
+def chat():
+    print("Hi, I'm a computer. How can I assist you today?")
+    while True:
+        user_input = input("> ").lower()
+        if user_input == "quit":
+            print(random.choice(responses["goodbye"]))
+            break
+        elif "hello" in user_input:
+            print(random.choice(responses["hello"]))
+        elif "help" in user_input:
+            print(random.choice(responses["help"]))
+        elif "name" in user_input:
+            print(random.choice(responses["name"]))
+        elif "weather" in user_input:
+            print(random.choice(responses["weather"]))
+        else:
+            print(random.choice(responses["default"]))
+
+# Start the conversation
+chat()
